@@ -1,120 +1,124 @@
-# An Introduction to JavaScript
+# JavaScript - ის შესავალი
 
-Let's see what's so special about JavaScript, what we can achieve with it, and which other technologies play well with it.
+მოდით ვნახოთ, რაში მდგომარებს JavaScript– ის განსაკუთრებულობა, რისი მიღწევა შეგვიძლია მისი მეშვეობით, და რომელი ტექნოლოგიების გამოყენება შეგვიძლია მასთან ერთად ყველაზე უკეთ.
 
-## What is JavaScript?
+## რა არის JavaScript ?
 
-*JavaScript* was initially created to *"make web pages alive"*.
+*JavaScript* თავდაპირველად შექმნილი იყო იმისთვის რომ *"გაეცოცხლებინა ვებ გვერდები"*.
 
-The programs in this language are called *scripts*. They can be written right in a web page's HTML and run automatically as the page loads.
+ამ ენაზე დაწერილი პროგრამებს ეწოდება *სკრიპტები*. ეს პროგრამები შეიძლება პირდაპირ დაწერილი იყოს ვებ გვერდის HTML - ში და ავტომატურად გაეშვას როგორც კი გვერდი ჩაიტვირთება.
 
-Scripts are provided and executed as plain text. They don't need special preparation or compilation to run.
+სკრიპტები წარმოდგენილია დასრულდება როგორც ჩვეულებრივი ტექსტი. მათ არ სჭირდებათ რაიმე მომზადება ან კომპილაცია რომ პროგრამა გაეშვას.
 
-In this aspect, JavaScript is very different from another language called [Java](https://en.wikipedia.org/wiki/Java_(programming_language)).
+ამ ასპექტში JavaScript ძალიან განსხვავდება სხვა პროგრამირების ენისაგან, რომელსაც ეწოდება [Java](https://en.wikipedia.org/wiki/Java_(programming_language)).
 
 ```smart header="Why <u>Java</u>Script?"
-When JavaScript was created, it initially had another name: "LiveScript". But Java was very popular at that time, so it was decided that positioning a new language as a "younger brother" of Java would help.
+როდესაც JavaScript შეიქმნა, მას თავდაპირველად ჰქონდა სხვა სახელი: "LiveScript". მაგრამ ამ დროს Java იყო ძალიან პოპულარული, ასე რომ გადაწყდა, რომ თუ JavaScript წარმოადგენდნენ როგორც ასე ვთქვათ Java - ის "უმცროს ძმას" ძალიან დაეხმარებოდა მას.
 
-But as it evolved, JavaScript became a fully independent language with its own specification called [ECMAScript](http://en.wikipedia.org/wiki/ECMAScript), and now it has no relation to Java at all.
+მაგრამ განვითარების შემდგომ JavaScript ჩამოყალიბდა სრულიად დამოუკიდებელ პროგრამირების ენად თავისი საკუთარი სპეციფიკაციებით, რომელსაც ეწოდება [ECMAScript] (http://en.wikipedia.org/wiki/ECMAScript), და დღეს მას საერთოდ არავითარი კავშირი აღარ აქვს Java - სთან.
+
 ```
+დღეს JavaScript შეიძლება გაშვებული იქნას არა მხოლოდ ბრაუზერში, არამედ სერვერზეც, ან უფრო ზუსტად ნებისმიერ მოწყობილობაზე, რასაც ექნება სპეციალური პროგრამა, რომელსაც ეწოდება [the JavaScript engine](https://en.wikipedia.org/wiki/JavaScript_engine).
 
-Today, JavaScript can execute not only in the browser, but also on the server, or actually on any device that has a special program called [the JavaScript engine](https://en.wikipedia.org/wiki/JavaScript_engine).
 
-The browser has an embedded engine sometimes called a "JavaScript virtual machine".
+ბრაუზერს აქვს ჩაშენებული ძრავა, რომელსაც ზოგჯერ უწოდებენ  "JavaScript virtual machine".
 
-Different engines have different "codenames". For example:
+სხვადასხვა ძრავას აქვს სხვადასხვა "კოდური სახელები". მაგალითად
 
-- [V8](https://en.wikipedia.org/wiki/V8_(JavaScript_engine)) -- in Chrome and Opera.
-- [SpiderMonkey](https://en.wikipedia.org/wiki/SpiderMonkey) -- in Firefox.
-- ...There are other codenames like "Trident" and "Chakra" for different versions of IE, "ChakraCore" for Microsoft Edge, "Nitro" and "SquirrelFish" for Safari, etc.
+- [V8](https://en.wikipedia.org/wiki/V8_(JavaScript_engine)) -- ქრომში და ოპერაში.
+- [SpiderMonkey](https://en.wikipedia.org/wiki/SpiderMonkey) -- ფაირფოქსში.
+- ...ასევე არსებობს სხვა კოდური სახელებიც "Trident" და "Chakra" ინტერნეტ ექსფლორერის სხვადასხვა ვერსიებისთვის, "ChakraCore" Microsoft Edge- ისთვის, "Nitro" და "SquirrelFish" საფარისთვის და ა.შ.
 
-The terms above are good to remember because they are used in developer articles on the internet. We'll use them too. For instance, if "a feature X is supported by V8", then it probably works in Chrome and Opera.
+ზემოთხსენებული ტერმინები კარგია რომ დაიმახსოვროთ რადგან ისინი გამოიყენება დეველოპერების სტატიებში ინტერნეტში. ჩვენც გამოვიყენებთ მათ. მაგალითად თუ რომელიმე ფუნქცია X აქვს V8 ის მხარდაჭერა, მაშინ შეიძლება ის მუშაობდეს ქრომსა და ოპერაში.
 
 ```smart header="How do engines work?"
 
-Engines are complicated. But the basics are easy.
+ძრავები რთულია. მაგრამ საფუძვლები ადვილი.
 
-1. The engine (embedded if it's a browser) reads ("parses") the script.
-2. Then it converts ("compiles") the script to the machine language.
-3. And then the machine code runs, pretty fast.
+1. ძრავა (თუ ბრაუზერია იმ შემთხვევაში ჩაშენებული) კითხულობს ("პარსავს") სკრიპტს.
+2. შემდეგ აკონვერტირებს ("აკომპილირებს") ამ სკრიპტს მანქანურ ენაზე.
+3. და შემდეგ მანქანური კოდი ეშვება, საკმაოდ სწრაფად.
 
-The engine applies optimizations at each step of the process. It even watches the compiled script as it runs, analyzes the data that flows through it, and applies optimizations to the machine code based on that knowledge. When it's done, scripts run quite fast.
+
+ძრავა აკეთებს ოპტიმიზაციას პროცესის ყველა ეტაპზე. ასევე უყურებს როდესაც ეშვება უკვე დაკომპილირებული სკრიპტი, აანალიზებს მონაცემებს, რომელიც მიედინება პროცესის დროს და უკეთებს ოპტიმიზაციას მანქანურ კოდს ამ ცოდნის საფუძველზე. როდესაც ეს პროცესი დასწულდება, სკრიპტი ეშვება ძალიან სწრაფად.
 ```
 
-## What can in-browser JavaScript do?
+## რა შეუძლია გააკეთოს ბრაუზერში არსებული JavaScript - ს?
 
-Modern JavaScript is a "safe" programming language. It does not provide low-level access to memory or CPU, because it was initially created for browsers which do not require it.
+თანამედროვე JavaScript არის "დაცული" პროგრამირების ენა. ის არ უზრუნველყოფს დაბალი დონის წვდომას მეხსიერებასთან ან პროცესორთან, რადგან იგი თავდაპირველად შექმნილი იყო ბრაუზერებისთვის, რაც არ საჭიროებს ამ წვდომას.
 
-JavaScript's capabilities greatly depend on the environment it's running in. For instance, [Node.js](https://wikipedia.org/wiki/Node.js) supports functions that allow JavaScript to read/write arbitrary files, perform network requests, etc.
+JavaScript - ის შესაძლებლობები დიდად არის დამოკიდებული იმ გარემოსზე სადაც იგი ეშვება. მაგალითად, [Node.js](https://wikipedia.org/wiki/Node.js) აძლევს მხარდაჭერას JavaScript - ის ისეთ ფუნქციებს რომლებსაც შეუძლიათ შემთხვევითი ფაილების აკითხვა/ჩაწერა, წსელის მოთხოვნის დამუშავება და ა.შ.
 
-In-browser JavaScript can do everything related to webpage manipulation, interaction with the user, and the webserver.
+ბრაუზერში არსებულ JavaScript - ს შეუძლია ყველაფერი, რაც ვებ გვერდის მანიპულაციასთან, მომხმარებელთან ინტერაქციასთან და ვებსერვერთან არის დაკავშირებული.
 
-For instance, in-browser JavaScript is able to:
+მაგალითად, ბრაუზერის JavaScript - ს შეუძლია :
 
-- Add new HTML to the page, change the existing content, modify styles.
-- React to user actions, run on mouse clicks, pointer movements, key presses.
-- Send requests over the network to remote servers, download and upload files (so-called [AJAX](https://en.wikipedia.org/wiki/Ajax_(programming)) and [COMET](https://en.wikipedia.org/wiki/Comet_(programming)) technologies).
-- Get and set cookies, ask questions to the visitor, show messages.
-- Remember the data on the client-side ("local storage").
+- დაამატოს ახალი HTML გვერდზე, შეცვალოს არსებული შიგთავსი და შეცვალოს სტილები
+- რეაგირება მოახდინოს მომხმარებლის ქმედებებზე, გაეშვას მაუსის დაწკაპუნებაზე, ისრის მოძრაობები, კლავიატურაზე დაწერა. 
+- გააგზავნოს მოთხოვნა სერვერთან ქსელის მეშვეობით, ჩამოტვირთოს და ატვირთოს ფაილები 
+(ე.წ [AJAX] https://en.wikipedia.org/wiki/Ajax_(programming)) და [COMET](https://en.wikipedia.org/wiki/Comet_(programming)) ტექნოლოგიები )
+- მიიღოს და ჩაწეროს ქუქი – ფაილები, დაუსვას კითხვები საიტზე შემოსულ სტუმარს, აჩვენოს მესიჯები.
+- შეინახოს მონაცემები კლიენტის-მხარეს (" ლოკალური მეხსიერება ").
 
-## What CAN'T in-browser JavaScript do?
+## რა არ შეუძლია ბრაუზერის JavaScript - ს?
 
-JavaScript's abilities in the browser are limited for the sake of the user's safety. The aim is to prevent an evil webpage from accessing private information or harming the user's data.
+JavaScript - ის შესაძლებლობები შეზღუდულია ბრაუზერში მომხმარებლის უსაფრთხოების გამო. მიზანი არის , რომ თავიდან ავიცილოთ ბოროტი ვებ-საიტების წვდომა პირად ინფორმაციაზე ან მომხმარებლის ინფორმაციის ზიანის მიყენება. 
 
-Examples of such restrictions include:
 
-- JavaScript on a webpage may not read/write arbitrary files on the hard disk, copy them or execute programs. It has no direct access to OS system functions.
+ასეთი შეზღუდვების მაგალითები მოიცავს:
 
-    Modern browsers allow it to work with files, but the access is limited and only provided if the user does certain actions, like "dropping" a file into a browser window or selecting it via an `<input>` tag.
+    -JavaScript - ს ვებ-გვერდზე არ შეუძლია წაიკითხოს/ჩაწეროს ნებისმიერ ფაილში მყარ დისკზე, ან დააკოპიროს ისინი და გაუშვას პროგრამები. მას არ აქვს არანაირი პირდაპირი კავშირი ოპერაციული სისტემის ფუნქციებზე.
 
-    There are ways to interact with camera/microphone and other devices, but they require a user's explicit permission. So a JavaScript-enabled page may not sneakily enable a web-camera, observe the surroundings and send the information to the [NSA](https://en.wikipedia.org/wiki/National_Security_Agency).
-- Different tabs/windows generally do not know about each other. Sometimes they do, for example when one window uses JavaScript to open the other one. But even in this case, JavaScript from one page may not access the other if they come from different sites (from a different domain, protocol or port).
+    თანამედროვე ბრაუზერები საშუალებას აძლევს JavaScript - ს ფაილებთან მუშაობის, მაგრამ წვდომა არის შეზღუდული და მხოლოდ იმ შემთხვევაში ხდება თუ მომხმარებელი გააკეთებს გარკვეულ მოქმედებებს ამისათვის, მაგალითად "გადაათრიოს" ფაილი ბრაუზერის ფანჯარაში ან ატვირთოს იგი `<input>` ტგით.
+    არის სხვადასხვა გზები კამერასთან/მიკროფონთან და სხვა მოწყობილობებთან ურთიერთქმედების, მაგრამ ისინი ითხოვენ მომხმარებლის გამოკვეთილ ნებართვას. ასე რომ ვებ-გვერდს რომელსაც აქვს JavaScript - ის მხარდაჭერა, არ შეუძლია გაააქტიუროს ვებ-კამერა, აკონტროლოს რა ხდება და უგზავნოს ინფორმაცია FSB– ს (https://en.wikipedia.org/wiki/National_Security_Agency).
+    - სხვადასხვა ტაბმა/ფანჯარამ როგორც წესი არ იცის ერთმანეთის შესახებ. ზოგ შემთხვევაში იციან, მაგალითად როდესაც ერთი გვერდი იყენებს JavaScript - ს რომ გახსნას მეორე. მაგრამ ამ შემთხვევაშიც კი შეიძლება JavaScript - ს ერთი გვერდიდან არ ჰქონდეს წვდომა მეორეზე თუ ისინი ეკუთვნიან სხვადასხვა საიტებს ( ან სხვადასხვა დომეინს, პროტოკოლს ან პორტს ). 
 
-    This is called the "Same Origin Policy". To work around that, *both pages* must agree for data exchange and contain a special JavaScript code that handles it. We'll cover that in the tutorial.
-
-    This limitation is, again, for the user's safety. A page from `http://anysite.com` which a user has opened must not be able to access another browser tab with the URL `http://gmail.com` and steal information from there.
-- JavaScript can easily communicate over the net to the server where the current page came from. But its ability to receive data from other sites/domains is crippled. Though possible, it requires explicit agreement (expressed in HTTP headers) from the remote side. Once again, that's a safety limitation.
+    ამას ეწოდება "Same Origin Policy".ამასთან რომ იმუშავონ *ორივე გვერდი/საიტი* უნდა შეთანხმდეს მონაცემთა გაცვლაზე და შეიცავდეს სპეციალურ JavaScript კოდს, რომელიც ამას ასრულებს. ამას განვიხილავთ ტუტორიალში. 
+ 
+    ეს შეზღუდვა კიდევ ერთხელ არის მომხმარებლის უსაფრთხოებისთვის. გვერდს http://anysite.com , რომელიც მომხმარებელს აქვს გახსნილი, არ უნდა ჰქონდეს წვდომის და ინფორმაციის მოპარვის უფლება ბრაუზერის სხვა ტაბიდან მისამართზე http://gmail.com. 
+    -avascript - ს შეუძლია ადვილად დაუკავშირდეს ქსელის მეშვეობით სერვერს, საიდანაც იტვირთება მოცემული საიტი( გვერდი ). მაგრამ მისი შესაძლებლობა , რომ წამოიღოს ინფორმაცია სხვა საიტებიდან/დომეინებიდან არის შეზღუდული. თუმცა ეს შესაძლებელია და მოითხოვს მკაცრ შეთანხმებას ( რომელიც გამოსახულია HTTP - ის დასაწყისში ) სერვერიდან. ისევ და ისევ ეს არის უსაფრთხოების შეზღუდვა. 
 
 ![](limitations.svg)
 
-Such limits do not exist if JavaScript is used outside of the browser, for example on a server. Modern browsers also allow plugin/extensions which may ask for extended permissions.
+მსგავსი შეზღუდვები არ არსებობს იმ შემთხვევაში თუ Javasceipt - ს ვიყენებთ ბრაუზერის გარეთ, მაგალითად სერვწრის მხარეს. თანამედროვე ბრაუზერები გვთავაზობენ ასევე პლაგინს/ექსთენშენებს რომლებმაც შესაძლოა გვთხოვონ უფრო მეტი ნებართვები.
 
-## What makes JavaScript unique?
+## რა ხდის Javasceipt - ს უნიკალურს?
 
-There are at least *three* great things about JavaScript:
+არსებობს მინიმუმ *სამი* მშვენიერი რაღაც Javascript  - ის შესახებ:
 
 ```compare
-+ Full integration with HTML/CSS.
-+ Simple things are done simply.
-+ Support by all major browsers and enabled by default.
++ სრული ინტეგრაცია HTML/CSS -სთან.
++ მარტივი რაღაცეები სრულდება მარტივად.
++ ყველა მთავარი ბრაუზერის მხარდაჭერა და გააქტიურებული სტანდარტულად.
 ```
-JavaScript is the only browser technology that combines these three things.
+JavaScript არის ბრაუზერის ერთადერთი ტექნოლოგია რომელიც აერთიანებს ამ სამ რაღაცას.
 
-That's what makes JavaScript unique. That's why it's the most widespread tool for creating browser interfaces.
+სწორედ ამის გამო არის ის უნიკალური. სწორედ ამის გამო არის ის ყველაზე ფართოდ გავრცელებული ინსტრუმენტი ბრაუზერის ინტერფეისის შესაქმნელად.
 
-That said, JavaScript also allows to create servers, mobile applications, etc.
+JavaScript ასევე იძლევა სერვერების, მობილური აპლიკაციების და ა.შ შექმნის საშუალებას.
 
-## Languages "over" JavaScript
+## ენები ჯავასკრიპტ "ზე"
 
-The syntax of JavaScript does not suit everyone's needs. Different people want different features.
+Javasceipt - ის სინტაქსი  ვერ აკმაყოფილებს ყველას მოთხოვნებს. სხვადასხვა ადამიანებს სჭირდებათ სხვადასხვა მახასიათებლები.
 
-That's to be expected, because projects and requirements are different for everyone.
+ეს მოსალოდნელია, რადგან პროექტები და მოთხოვნები ყველასთვის სხვადასხვაა. 
 
-So recently a plethora of new languages appeared, which are *transpiled* (converted) to JavaScript before they run in the browser.
+ასე რომ ბოლო დროს გამოჩნდა ახალი ენების სიუხვე, რომლებიც გადაიყვანება( კონვერტირდება )  Javasceipt -ში ვიდრე ისინი ბრაუზერში გაეშვებიან.
 
-Modern tools make the transpilation very fast and transparent, actually allowing developers to code in another language and auto-converting it "under the hood".
+თანამედროვე ხელსაწყოები ხდიან გადაყვანის პროცესს სწრაფს და გამჭვირვალეს. უფრო ზუსტად, აძლევენ საშუალებას დეველოპერს, რომ მან დაწეროს კოდი სხვა ენაზე და ის გადაკონვერტირდეს ავტომატურად. 
 
-Examples of such languages:
+ასეთი ენებუს მაგალითებია:
 
-- [CoffeeScript](http://coffeescript.org/) is a "syntactic sugar" for JavaScript. It introduces shorter syntax, allowing us to write clearer and more precise code. Usually, Ruby devs like it.
-- [TypeScript](http://www.typescriptlang.org/) is concentrated on adding "strict data typing" to simplify the development and support of complex systems. It is developed by Microsoft.
-- [Flow](http://flow.org/) also adds data typing, but in a different way. Developed by Facebook.
-- [Dart](https://www.dartlang.org/) is a standalone language that has its own engine that runs in non-browser environments (like mobile apps), but also can be transpiled to JavaScript. Developed by Google.
+- [CoffeeScript](http://coffeescript.org/) არის "სინტაქსური შაქარი" JavaScript - სთვის. იგი წარმოგვიდგენს უფრო მოკლე სინტაქსს, რითაც საშუალებას გვაძლევს, რომ ვწეროთ უფრო გასაგები და ზუსტი კოდი. ძირითადად Ruby -  ს დეველოპერებს მოწონთ ის.
+- [TypeScript](http://www.typescriptlang.org/) ძირითადად კონცენტრირებულია "strict data typing" - ზე რათა გაამარტივოს კოდის წერა და მხარი დაუჭიროს უფრო რთულ სისტემებს. იგი შექმნილია  Microsoft მიერ.
+- [Flow](http://flow.org/) ასევე ამატებს მონაცემთა ტიპებს, მაგრამ განსხვავებული გზით. შექმნილია ფეისბუქის მიერ.
+- [Dart](https://www.dartlang.org/) ცალკე მდგომი ენაა და აქვს თავისი საკუთარი ძრავი, რომელიც ეშვება ისეთ გარემოში სადაც არ არის ბრაუზერი ( როგორიც არის მაგალითად მობილური აპლიკაცია ) , მაგრამ ასევე შეიძლება, რომ გადაყვანილი იქნას  JavaScript - ში. შექმნილია Google - ის მიერ. 
 
 There are more. Of course, even if we use one of transpiled languages, we should also know JavaScript to really understand what we're doing.
 
-## Summary
+## შეჯამება
 
-- JavaScript was initially created as a browser-only language, but is now used in many other environments as well.
-- Today, JavaScript has a unique position as the most widely-adopted browser language with full integration with HTML/CSS.
+- თავდაპირველად JavaScript შექმნილი იყო, როგორც მხოლოდ ბრაუზერის ენა, მაგრამ დღეს იგი გამოიყენება მრავალ სხვა გარემოშიც.
+- დღეს, JavaScript - ს უკავია უნიკალური პოზიცია, როგორც ყველაზე ფართოდ გამოყენებული ბრაუზერის ენა, რომელსაც აქვს სრული ინტეგრაცია HTML/CSS - სთან.
 - There are many languages that get "transpiled" to JavaScript and provide certain features. It is recommended to take a look at them, at least briefly, after mastering JavaScript.
+- არსებობს მრავალი ენა, რომელიც "გადაიყვანება" JavaScript - ში და გვთავაზობს გარკვეულ ფუნქციებს. რეკომენდებულია, რომ გადავხედოთ ამ ენებს, მას შემდეგ რაც კარგად გავეცნობით JavaScript - ს.
