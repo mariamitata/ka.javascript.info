@@ -1,64 +1,64 @@
-# Developer console
+# კონსოლი
 
-Code is prone to errors. You will quite likely make errors... Oh, what am I talking about? You are *absolutely* going to make errors, at least if you're a human, not a [robot](https://en.wikipedia.org/wiki/Bender_(Futurama)).
+კოდი მიდრეკილია შეცდომებისკენ. საკმაოდ სავარაუდოა რომ თქვენც დაუშვებთ შეცდომებს... ოჰ, რაზე ვსაუბრობ მე საერთოდ? თქვენ *აბსოლიტურად* დაუშვებთ შეცდომებს,  ყოველ შემთხვევაში თუ თქვენ ხართ ადამიანი, და არა [რობოტი](https://en.wikipedia.org/wiki/Bender_(Futurama)).
 
-But in the browser, users don't see errors by default. So, if something goes wrong in the script, we won't see what's broken and can't fix it.
+მაგრამ ბრაუზერში, მომხმარებელი ვერ ხედავს შეცდომებს თავისთავად. ასე რომ, ასე რომ თუ რაიმე არასწორად არის სკრიპტში, ჩვენ ვერ დავინახავთ თუ სად არის შეცდომა და როგორ გამოვასწოროთ იგი.
 
-To see errors and get a lot of other useful information about scripts, "developer tools" have been embedded in browsers.
+იმისთვის რომ დავინახოთ შეცდომები და უამრავი ინფორმაცია სკრიპტის შესახებ, "developer tools" არის ჩაშენებული ბრაუზერში.
 
-Most developers lean towards Chrome or Firefox for development because those browsers have the best developer tools. Other browsers also provide developer tools, sometimes with special features, but are usually playing "catch-up" to Chrome or Firefox. So most developers have a "favorite" browser and switch to others if a problem is browser-specific.
+დეველოპერთა უმეტესობა იყენებს ქრომს და ფაირფოქსს დეველოპმენტისთვის, რადგან მათ აქვთ საუკეთესო developer tools. სხვა ბრაუზერებსაც აქვთ developer tools, ზოგჯერ სპეციალური მახასიათებლებითაც კი, მაგრამ როგორც წესი ცდილობენ დაეწიონ ქრომს და ფაირფოქსს. ასე რომ დეველოპერების უმეტესობას აქვს "საყვარელი" ბრაუზერი და მხოლოდ ცვლის მათ თუ რაიმე ბრაუზერის სპეციფიკური პრობლემა გამოჩნდა.
 
-Developer tools are potent; they have many features. To start, we'll learn how to open them, look at errors, and run JavaScript commands.
+Developer tools არის ძლიერი; აქვთ ბევრი ფუნქცია. დასაწყისისთვის ჩვენ ვისწავლით როგორ გავხსნათ ისინი, დავაკვირდეთ შეცდომებს, და გავუშვათ Javawcript ბრძანებები.
 
 ## Google Chrome
 
-Open the page [bug.html](bug.html).
+გახსენით გვერდი [bug.html](bug.html).
 
-There's an error in the JavaScript code on it. It's hidden from a regular visitor's eyes, so let's open developer tools to see it.
+მასში არის შეცდომა Javascript - ის კოდში. ჩვეულებრივი ვიზიტორის თვალისთვის ის უხილავია, ასე რომ, მოდით გავხსნათ developer tools რომ ვნახოთ ის.
 
-Press `key:F12` or, if you're on Mac, then `key:Cmd+Opt+J`.
+დააჭირეთ `key:F12`  ღილაკს ან, თუ იყენებთ Mac - ს, მაშინ `key:Cmd+Opt+J`.
 
-The developer tools will open on the Console tab by default.
+Developer tools გაიხსნება კონსოლის ტაბში ავტომატურად.
 
-It looks somewhat like this:
+ეს დაახლოებით ასე გამოიყურება:
 
 ![chrome](chrome.png)
 
-The exact look of developer tools depends on your version of Chrome. It changes from time to time but should be similar.
+developer tools - ის ზუსტი ვიზუალი დამოკიდებულია თქვენი ქრომის ვერსიაზე. ის იცვლწბა დრო და დრო მაგრამ მეტნაკლებად იგივეა.
 
-- Here we can see the red-colored error message. In this case, the script contains an unknown "lalala" command.
-- On the right, there is a clickable link to the source `bug.html:12` with the line number where the error has occurred.
+- აქ ჩვენ შეგვიძლია ვიხილოთ წითელი შეცდომა. ამ შემთხვევაში, სკრიპტი შეიცავს უცნობ "lalala" კომენტარს.
+- მარჯვენა მხარეს, არის ბმული, რომლიდანაც შეგიძლიათ ნახოთ კოდი `bug.html:12` იმ ხაზის ნომრით, სადაც მოხდა შეცდომა.
 
-Below the error message, there is a blue `>` symbol. It marks a "command line" where we can type JavaScript commands. Press `key:Enter` to run them (`key:Shift+Enter` to input multi-line commands).
+შეცდომის შეტყობინების ქვემოთ, არის ლურჯი `>` სიმბოლო. ის მონიშნავს "ბრძანების ველს" სადაც ჩვენ შეგვიძლია დავწეროთ Javascript  ბრძანებები. დააჭირეთ `key:Enter` მათ გასაშვებად (`key:Shift+Enter` რამდენიმე ხაზიანი ბრძანებების შესატანად).
 
-Now we can see errors, and that's enough for a start. We'll come back to developer tools later and cover debugging more in-depth in the chapter <info:debugging-chrome>.
+ახლა ჩვენ შეგვიძლია დავინახოთ ბრძანებები, და ეს საკმარისია დასაწყისისთვის. ჩვენ დავუბრუნდებით developer tools - ს მოგვიანებით განვიხილავთ დებაგს უფრო სიღრმისეულად <info:debugging-chrome> თავში.
 
 
-## Firefox, Edge, and others
+## ფაირფოქსი, ეჯი, და სხვები
 
-Most other browsers use `key:F12` to open developer tools.
+ბრაუზერების უმეტესობა იყენებს `key:F12` developer tools - ის გასახსნელად.
 
-The look & feel of them is quite similar. Once you know how to use one of these tools (you can start with Chrome), you can easily switch to another.
+მათი ვიზუალი და შეგრძნება საკმაოდ ერთნაირია. როგორც კი გეცოდინება, თუ როგორ მუშაობს ერთერთი მათგანი (შეგიძლიათ დაიწყოთ ქრომით), ადვილად შეგიძლიათ გადაერთოდ მეორეზე.
 
 ## Safari
 
-Safari (Mac browser, not supported by Windows/Linux) is a little bit special here. We need to enable the "Develop menu" first.
+Safari (Mac ბრაუზერი, არ აქვს ვინდოუსი/ლინუქსი - გან) არის ცოტა უფრო განსხვავებული. ჩვენ უნდა ჩავრთოთ "Develop menu" თავიდან.
 
-Open Preferences and go to the "Advanced" pane. There's a checkbox at the bottom:
+შემდეგ გავხსნათ Preferences ავირჩიოთ "Advanced" პანელი. ბოლოში არის მოსანიშნი უჯრა:
 
 ![safari](safari.png)
 
-Now `key:Cmd+Opt+C` can toggle the console. Also, note that the new top menu item named "Develop" has appeared. It has many commands and options.
+ახლა `key:Cmd+Opt+C` შეუძლია აჩვენოს ან დამალოს კონსოლი. ასევე უნდა შევნიშნოთ, რომ ზედა მენიუს ახალი პუნქტი "Develop" დაემატა. რომელსაც აქვს მრავალი ბრძანება თუ პარამეტრი.
 
 ```smart header="Multi-line input"
-Usually, when we put a line of code into the console, and then press `key:Enter`, it executes.
+როგორც წესი, როდესაც ვამატებთ ახალ ხაზს კოდში და შემდეგ ვაწვებით `key:Enter`, ის ეშვება.
 
-To insert multiple lines, press `key:Shift+Enter`. This way one can enter long fragments of JavaScript code.
+იმისთვის რომ დაამატოთ რამოდენიმე ხაზი, დააჭირეთ `key:Shift+Enter`. ამ გზით შეგიძლიათ დაამატოთ JavaScript - ის კოდის დიდი ფრაგმენტი .
 ```
 
-## Summary
+## შეჯამება
 
-- Developer tools allow us to see errors, run commands, examine variables, and much more.
-- They can be opened with `key:F12` for most browsers on Windows. Chrome for Mac needs `key:Cmd+Opt+J`, Safari: `key:Cmd+Opt+C` (need to enable first).
+- Developer tools გვაძლევს საშუალებას რომ დავინახოთშეცდომები, გავუშვათ ბრძანებები, დავტესტოთ ცვლადები, და მრავალი სხვა.
+- ისინი შეგვიძლია გავხსნათ `key:F12` ვინდოუსის უმეტესობა ბრაუზერებში. ქრომისთვის მაკზე ვიყენებთ `key:Cmd+Opt+J`, Safari - ში: `key:Cmd+Opt+C` (საჭიროებს გააქტიურებას თავდაპირველად).
 
-Now we have the environment ready. In the next section, we'll get down to JavaScript.
+ახლა ჩვენ გვაქვს გარემო მზად. ჩემდეგ თავში ჩვენ დავუბრუნდებით Jvaascript - ს.
