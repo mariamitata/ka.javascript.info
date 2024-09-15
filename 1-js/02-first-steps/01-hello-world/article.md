@@ -2,16 +2,16 @@
 
 This part of the tutorial is about core JavaScript, the language itself.
 
-But we need a working environment to run our scripts and, since this book is online, the browser is a good choice. We'll keep the amount of browser-specific commands (like `alert`) to a minimum so that you don't spend time on them if you plan to concentrate on another environment (like Node.js). We'll focus on JavaScript in the browser in the [next part](/ui) of the tutorial.
+მაგრამ ჩვენ გვჭირდება მუშა გარემო, რათა გავუშვათ ჩვენი სკრიპტები. რადგან ეს წიგნი არის ონლაინ, შესაბამისად ბრაუზერი არის კარგი არჩევანი. ჩვენ გვექნება ბრაუზერის სპეციფიკური ბრძანებების მინიმალური რაოდენობა(როგორ `alert`).  თავენ რომ არ დახარჯოთ დრო მათზე თუ თქვენ გეგმავთ რომ კონცენტრაცია მოახდინოთ სხვა გარემოზე (like Node.js). ჩვენ გვექნება ფოკუსირება JavaScript - ზე ბრაუზერში შემდეგ [შემდეგ ნაწილში](/ui) ტუტორიალის.
 
-So first, let's see how we attach a script to a webpage. For server-side environments (like Node.js), you can execute the script with a command like `"node my.js"`.
+ასე რომ თავდაპირველად, მოდით ვნახოთ თუ როგორ მივამაგროთ სკრიპტი ვებსაიტს. სერვერული გარემოსთვის  (როგორც Node.js), თქვენ შეგიძლიათ გაუშვათ სკრიპტი ბრძანებით როგორც `"node my.js"`.
 
 
-## The "script" tag
+## The "script" თეგი
 
-JavaScript programs can be inserted into any part of an HTML document with the help of the `<script>` tag.
+JavaScript პროგრამები შეიძლება ჩავამატოთ HTML დოკუმენტის ნებიემიერ ადგილას `<script>` თეგის დახმარებით.
 
-For instance:
+მაგალითად:
 
 ```html run height=100
 <!DOCTYPE HTML>
@@ -19,7 +19,7 @@ For instance:
 
 <body>
 
-  <p>Before the script...</p>
+    <p>Script  - მდე ...</p>
 
 *!*
   <script>
@@ -27,7 +27,7 @@ For instance:
   </script>
 */!*
 
-  <p>...After the script.</p>
+  <p>...Script - ის შემდეგ.</p>
 
 </body>
 
@@ -35,7 +35,7 @@ For instance:
 ```
 
 ```online
-You can run the example by clicking the "Play" button in the right-top corner of the box above.
+თქვენ შეგიძლიათ გაუშვათ სკრიპტი  "Play" ღილაკზე დაჭერით მარჯვენა ზედა კუთხეში.
 ```
 
 The `<script>` tag contains JavaScript code which is automatically executed when the browser processes the tag.
